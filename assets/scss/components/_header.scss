@@ -1,0 +1,43 @@
+/*=============== HEADER ===============*/
+.header{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 100;
+   margin: 1rem;
+
+   &__container{
+      width: 100%;
+      height: var(--header-height);
+      background-color: hsla(0, 0%, 0%, .2);
+      backdrop-filter: blur(16px);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 1rem;
+   }
+   &__logo{
+      display: flex;
+      align-items: center;
+      column-gap: .25rem;
+      color: var(--white-color);
+      font-weight: 500;
+
+      & i{
+         font-size: 1.5rem;
+      }
+   }
+   &__toggle{
+      width: 32px;
+      height: 32px;
+      border-radius: .5rem;
+      border: none;
+      outline: none;
+      font-size: 1.5rem;
+      background-color: hsla(0, 0%, 0%, .2);
+      color: var(--white-color);
+      cursor: pointer;
+   }
+}

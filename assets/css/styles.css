@@ -1,0 +1,275 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== LAYOUT ===============*/
+.image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.main {
+  padding-top: 5rem;
+  margin-inline: 1.5rem;
+  color: var(--white-color);
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 1rem;
+}
+
+.header__container {
+  width: 100%;
+  height: var(--header-height);
+  background-color: hsla(0, 0%, 0%, .2);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+.header__logo i {
+  font-size: 1.5rem;
+}
+
+.header__toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  background-color: hsla(0, 0%, 0%, .2);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+/*=============== SIDEBAR ===============*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -120%;
+  bottom: 0;
+  width: 232px;
+  background-color: hsla(0, 0%, 0%, .2);
+  backdrop-filter: blur(16px);
+  z-index: 100;
+  padding: 1rem 1rem 1.5rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  transition: left .4s;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  color: var(--white-color);
+  padding: 0 0 1rem .5rem;
+  font-weight: 500;
+  border-bottom: 1px solid hsla(0, 0%, 100%, .3);
+}
+
+.sidebar__logo i {
+  font-size: 1.5rem;
+}
+
+.sidebar__content {
+  display: grid;
+  row-gap: .5rem;
+  padding-top: 1.5rem;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  color: var(--white-color);
+  padding: .5rem;
+  border-radius: .5rem;
+  transition: background-color .4s;
+}
+
+.sidebar__link i {
+  font-size: 1.25rem;
+}
+
+.sidebar__link span {
+  font-weight: 500;
+}
+
+.sidebar__link:hover {
+  background-color: hsla(0, 0%, 0%, .2);
+}
+
+/* Show sidebar */
+.show-sidebar {
+  left: 0;
+}
+
+/*=============== DROPDOWN ===============*/
+.drop__button {
+  width: 100%;
+  flex-direction: row;
+  border: none;
+  outline: none;
+  background: none;
+  font: 500 var(--normal-font-size) var(--body-font);
+  cursor: pointer;
+}
+
+.drop__arrow {
+  margin-left: auto;
+  transition: transform .4s;
+}
+
+.drop__list {
+  display: grid;
+  row-gap: .25rem;
+  height: 0;
+  overflow: hidden;
+  transition: height .4s;
+}
+
+.drop__item {
+  position: relative;
+  display: block;
+  color: var(--white-color);
+  padding: .5rem .5rem .5rem 2.25rem;
+  border-radius: .5rem;
+  transition: background-color .4s;
+}
+
+.drop__item::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--white-color);
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border-radius: 50%;
+}
+
+.drop__item:hover {
+  background-color: hsla(0, 0%, 0%, .2);
+}
+
+/* Rotate drop icon */
+.show-drop .drop__arrow {
+  transform: rotate(-180deg);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .header {
+    margin-inline: .5rem;
+  }
+
+  .sidebar {
+    width: 200px;
+    margin-inline: .5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .header {
+    margin: 1.5rem;
+    padding-left: 274px;
+    transition: padding .4s;
+  }
+  .header__container {
+    height: calc(var(--header-height) + 2rem);
+    padding-inline: 1.5rem;
+  }
+  .header__toggle {
+    display: none;
+  }
+
+  .sidebar {
+    left: 0;
+    width: 250px;
+    margin: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .main {
+    padding-left: 274px;
+    padding-top: 8rem;
+    transition: padding .4s;
+  }
+}
