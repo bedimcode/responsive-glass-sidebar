@@ -1,0 +1,45 @@
+========== HEADER ==========
+.header__logo
+Plating
+
+========== SIDEBAR ==========
+.sidebar__logo
+Plating
+
+.sidebar__link .drop__button .drop__item
+Dashboard
+
+Create
+   Project
+   Archives
+   Imports
+
+Account
+   Metrics
+   Administrator
+   Payments
+   Passwords
+
+Profile
+   Activity
+   View Profile
+
+Notifications
+
+Products
+
+Settings
+
+.main h1
+Glass sidebar
+
+========== SIDEBAR JS ==========
+// 1. Show drop list (Ask if the drop is open or closed)
+
+   // If it's OPEN → IT CLOSES
+   // If it's CLOSED → IT OPENS
+
+// 2. Close any other drop that are open
+
+   // Search if there are any open drop
+   // Check if there is an open drop
